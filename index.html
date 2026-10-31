@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ardiyanto Bijaksono — Technical Operations, Data Administration & Reporting</title>
+<meta name="description" content="Portofolio dan CV Ardiyanto Bijaksono: technical operations, administrasi data, dan pelaporan. Banyumas, Indonesia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--card:#fff;--ink:#14213d;--muted:#55607a;--line:#d5dbe7;--accent:#2f5bea;--mark:#ffd166}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1424;--card:#161e34;--ink:#eef1f8;--muted:#9aa5c0;--line:#27324f;--accent:#7b9bff}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Figtree,system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;margin:0}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:1.25rem;align-items:center;padding-top:.8rem;padding-bottom:.8rem;overflow-x:auto}
+nav b{font-family:'Bricolage Grotesque',sans-serif;margin-right:auto;white-space:nowrap}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{padding:4.5rem 0 3.5rem}
+.hero .hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:2.5rem;align-items:center}
+.hero-copy{min-width:0}
+.hero-photo-wrap{justify-self:end;width:100%;max-width:280px;aspect-ratio:3/4;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--card);box-shadow:0 16px 40px rgba(10,20,45,.14)}
+.hero-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+@media(max-width:700px){.hero .hero-layout{grid-template-columns:1fr;gap:1.75rem}.hero-photo-wrap{grid-row:1;justify-self:start;max-width:190px;aspect-ratio:3/4}.hero{padding:2.5rem 0 2.5rem}}
+.hero h1{font-size:clamp(2.6rem,9vw,5.4rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--mark) 62%);color:#14213d}
+.role{font-weight:600;margin:1.25rem 0 0;color:var(--accent)}
+.hero p.sum{max-width:40rem;color:var(--muted);font-size:1.15rem;margin:1rem 0 2rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:none;font:inherit;font-weight:600;cursor:pointer}
+.btn.p{background:var(--ink);color:var(--bg)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:2rem;margin-bottom:1.5rem}
+.intro{color:var(--muted);max-width:42rem;margin:-.75rem 0 1.5rem}
+.job{display:grid;grid-template-columns:11rem 1fr;gap:.5rem 2rem;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.job:last-child{border:0}
+.job time{color:var(--muted);font-size:.95rem}
+.job h3{font-size:1.2rem}
+.job .co{color:var(--accent);font-weight:600}
+.job ul{margin:.6rem 0 0;padding-left:1.1rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.proj h3{font-size:1.25rem}
+.proj p{margin:0;color:var(--muted);font-size:1rem}
+.res{font-weight:600;color:var(--ink)!important}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.4rem}
+.tags span,.skills span{font-size:.85rem;padding:.2rem .65rem;border-radius:999px;border:1px solid var(--line)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem;margin:.35rem 0 .15rem}
+.gallery button{display:block;padding:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--bg);cursor:zoom-in;aspect-ratio:16/10}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s ease}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery-label{font-size:.82rem;color:var(--muted);margin:-.35rem 0 .15rem}
+.gallery-empty{border:1px dashed var(--line);border-radius:10px;background:var(--bg);padding:1rem;color:var(--muted);font-size:.9rem;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center}
+.lightbox{position:fixed;inset:0;background:rgba(5,10,22,.9);display:none;align-items:center;justify-content:center;padding:2rem;z-index:20}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1100px,95vw);max-height:85vh;object-fit:contain;border-radius:10px;box-shadow:0 12px 48px #0008}
+.lightbox button{position:absolute;top:1rem;right:1.2rem;border:1px solid #ffffff66;background:#17213a;color:white;border-radius:999px;padding:.55rem .9rem;font:inherit;cursor:pointer}
+.lightbox .lb-caption{position:absolute;bottom:1rem;left:1rem;right:1rem;text-align:center;color:white;font-size:.95rem}
+@media(max-width:520px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.lightbox{padding:1rem}}
+.skills{display:flex;gap:.6rem;flex-wrap:wrap}
+.skills span{font-size:1rem;padding:.4rem .95rem;background:var(--card)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.two h3{font-size:1.2rem;margin-bottom:.75rem}
+.two ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.two li{margin-bottom:.5rem}
+.note{background:var(--card);border-left:5px solid var(--mark);padding:1.25rem 1.5rem;border-radius:0 12px 12px 0;color:var(--muted);max-width:44rem;margin:0}
+.contact p{max-width:36rem;color:var(--muted)}
+.contact a.mail{font:800 clamp(1.3rem,5vw,2.3rem)/1.2 'Bricolage Grotesque',sans-serif;word-break:break-all}
+.links{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.25rem}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(max-width:640px){.job{grid-template-columns:1fr}}
+@media print{nav,.btns,.links{display:none}body{background:#fff;color:#000;font-size:11pt}.hero{padding:1rem 0}section{padding:1rem 0}.job,.proj{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <b>Ardiyanto Bijaksono</b>
+  <a href="#pengalaman">Pengalaman</a><a href="#portofolio">Portofolio proyek</a><a href="#kompetensi">Kompetensi</a><a href="#pendidikan">Pendidikan</a><a href="#kontak">Kontak</a>
+</div></nav>
+
+<header class="hero"><div class="wrap hero-layout">
+  <div class="hero-copy">
+    <h1>Ardiyanto <span>Bijaksono</span></h1>
+    <p class="role">Technical Operations · Data Administration & Reporting · Digital Systems</p>
+    <p class="sum">Lebih dari 5 tahun mendukung operasional produksi broadcasting dan konten digital: koordinasi lintas tim, dokumentasi, dan penanganan kendala teknis. Kini mengembangkan keahlian administrasi data dan pelaporan lewat proyek latihan mandiri di Excel dan Google Sheets.</p>
+    <div class="btns">
+      <a class="btn p" href="#kontak">Hubungi saya</a>
+      <a class="btn" href="#portofolio">Lihat portofolio proyek</a>
+      <button class="btn" onclick="window.print()">Simpan CV sebagai PDF</button>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="assets/profile/ardiyanto-profile.jpg" alt="Foto profil Ardiyanto Bijaksono">
+  </div>
+</div></header>
+
+<section id="pengalaman"><div class="wrap">
+  <h2>Pengalaman kerja</h2>
+  <div class="job">
+    <time>Juli 2023 – Des 2026<br>Kontrak</time>
+    <div><h3>Technical Support, Digital Content Creations</h3><div class="co">Telkomsel</div>
+      <ul><li>Mendukung operasional teknis program dan konten digital untuk IndiHome TV by Telkomsel.</li>
+      <li>Menangani aspek teknis audio dan mendukung produksi konten untuk Allplay Entertainment, Fun Planet, dan MyTelkomsel.</li>
+      <li>Berkoordinasi dengan tim kreatif, marketing, dan komunikasi.</li>
+      <li>Terlibat dalam produksi lebih dari 100 konten digital.</li></ul></div>
+  </div>
+  <div class="job">
+    <time>Feb 2020 – Juni 2023<br>Kontrak</time>
+    <div><h3>Audio Specialist, Inhouse Channel & Production</h3><div class="co">PT Telkom Indonesia</div>
+      <ul><li>Menangani aspek teknis audio untuk program IndiHome TV, live streaming, webinar, dan konten digital.</li>
+      <li>Bekerja bersama tim produksi menjaga kelancaran proses dan standar kualitas siaran.</li>
+      <li>Mendukung teknis dan koordinasi operasional acara internal perusahaan.</li></ul></div>
+  </div>
+  <div class="job">
+    <time>Juni 2019 – Jan 2020<br>Paruh waktu</time>
+    <div><h3>Video Editor</h3><div class="co">Evio Multimedia</div>
+      <ul><li>Mengedit video untuk kebutuhan korporat, content marketing, acara pernikahan, dan media sosial.</li></ul></div>
+  </div>
+  <div class="job">
+    <time>Juli – Sep 2018<br>Magang</time>
+    <div><h3>Camera Person, Video Editor & Video Journalist</h3><div class="co">Kompas TV</div>
+      <ul><li>Mendukung peliputan berita, pengambilan gambar, dan penyuntingan materi jurnalistik.</li>
+      <li>Bekerja mengikuti standar redaksi dan tenggat produksi.</li></ul></div>
+  </div>
+</div></section>
+
+<section id="portofolio"><div class="wrap">
+  <h2>Portofolio proyek</h2>
+  <p class="intro">Pilihan proyek administrasi data dan digital systems. Proyek data merupakan latihan mandiri menggunakan data dummy; EquipMaxTV merupakan proyek aplikasi internal yang dikembangkan sebagai solusi pengelolaan peminjaman peralatan.</p>
+  <div class="grid">
+    <article class="proj"><h3>1. Data E-commerce Order</h3>
+      <p>Menyusun alur input dan profiling, standardisasi nama dan kota, pemeriksaan format email dan ID pesanan, identifikasi status pesanan, serta kalkulasi kuantitas dan nilai pesanan.</p>
+      <p class="res">600 record, 11 field. 0 Order_ID duplikat, 30 email ditandai untuk ditinjau, dan 143 pesanan berstatus cancelled. Menghasilkan rekap nilai bruto dan pendapatan aktif.</p>
+      <div class="gallery" aria-label="Screenshot proyek E-commerce Order">
+        <button type="button" data-full="assets/project-pdf/ecommerce-1.jpg" data-caption="E-commerce Order — data sumber"><img src="assets/project-pdf/ecommerce-1.jpg" alt="Screenshot data sumber E-commerce Order" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/ecommerce-2.jpg" data-caption="E-commerce Order — validasi dan pemeriksaan"><img src="assets/project-pdf/ecommerce-2.jpg" alt="Screenshot validasi E-commerce Order" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/ecommerce-3.jpg" data-caption="E-commerce Order — ringkasan metrik"><img src="assets/project-pdf/ecommerce-3.jpg" alt="Screenshot ringkasan E-commerce Order" loading="lazy"></button>
+      </div><div class="gallery-label">3 screenshot · Klik gambar untuk memperbesar</div>
+      <div class="tags"><span>Excel / Google Sheets</span><span>600 record</span><span>Demo mandiri</span></div></article>
+
+    <article class="proj"><h3>2. Data Customer Data Cleaning</h3>
+      <p>Memeriksa ID duplikat, data kosong, dan pola email. Data sumber dipertahankan; data kosong ditandai untuk tindak lanjut, bukan diisi dengan tebakan. Output: Raw_Data, Validation_Log, Validation_Checklist, Cleaned_Data, dan Summary_Report.</p>
+      <p class="res">730 record menjadi 700 setelah 30 baris duplikat lanjutan dihapus berdasarkan Record_ID. Data kosong tetap ditandai untuk tindak lanjut.</p>
+      <div class="gallery" aria-label="Screenshot proyek Customer Data Cleaning">
+        <button type="button" data-full="assets/project-pdf/cleaning-1.jpg" data-caption="Customer Data Cleaning — raw data"><img src="assets/project-pdf/cleaning-1.jpg" alt="Screenshot raw data customer" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/cleaning-2.jpg" data-caption="Customer Data Cleaning — validation log"><img src="assets/project-pdf/cleaning-2.jpg" alt="Screenshot validation log customer" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/cleaning-3.jpg" data-caption="Customer Data Cleaning — cleaned data"><img src="assets/project-pdf/cleaning-3.jpg" alt="Screenshot cleaned data customer" loading="lazy"></button>
+      </div><div class="gallery-label">3 screenshot · Klik gambar untuk memperbesar</div>
+      <div class="tags"><span>Google Sheets / Excel</span><span>730 → 700 record</span><span>Demo mandiri</span></div></article>
+
+    <article class="proj"><h3>3. Data PDF-to-Excel Invoice</h3>
+      <p>Merekonstruksi data invoice ke tabel terstruktur, mengubah nilai Rupiah berbentuk teks menjadi angka, menjaga nomor invoice sebagai identifier, dan memeriksa rumus Total = Qty × Unit Price.</p>
+      <p class="res">400 invoice. 400/400 pemeriksaan aritmetika cocok, 0 ID duplikat, dan 0 baris dengan field kosong pada dataset latihan.</p>
+      <div class="gallery" aria-label="Screenshot proyek PDF-to-Excel Invoice">
+        <button type="button" data-full="assets/project-pdf/invoice-1.jpg" data-caption="PDF-to-Excel Invoice — hasil ekstraksi"><img src="assets/project-pdf/invoice-1.jpg" alt="Screenshot hasil ekstraksi invoice" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/invoice-2.jpg" data-caption="PDF-to-Excel Invoice — tabel terstruktur"><img src="assets/project-pdf/invoice-2.jpg" alt="Screenshot tabel invoice terstruktur" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/invoice-3.jpg" data-caption="PDF-to-Excel Invoice — quality checks"><img src="assets/project-pdf/invoice-3.jpg" alt="Screenshot quality check invoice" loading="lazy"></button>
+      </div><div class="gallery-label">3 screenshot · Klik gambar untuk memperbesar</div>
+      <div class="tags"><span>Excel / Google Sheets</span><span>400 invoice</span><span>Demo mandiri</span></div></article>
+
+    <article class="proj"><h3>4. Data Customer Database Updating</h3>
+      <p>Merancang proses pencocokan berdasarkan Customer_ID dengan pembaruan terbatas pada Email, Phone, dan Account_Status. Mencakup pemeliharaan field lain, update log, penandaan ID yang tidak ditemukan, serta checklist QA.</p>
+      <p class="res">800 record dan 180 permintaan perubahan dummy. Proyek ini mendemonstrasikan rancangan alur dan kontrol; hasil akhir QA tidak diklaim terverifikasi.</p>
+      <div class="gallery" aria-label="Screenshot proyek Customer Database Updating">
+        <button type="button" data-full="assets/project-pdf/database-1.jpg" data-caption="Customer Database Updating — database master"><img src="assets/project-pdf/database-1.jpg" alt="Screenshot database master customer" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/database-2.jpg" data-caption="Customer Database Updating — update requests"><img src="assets/project-pdf/database-2.jpg" alt="Screenshot daftar permintaan pembaruan customer" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/database-3.jpg" data-caption="Customer Database Updating — working update log"><img src="assets/project-pdf/database-3.jpg" alt="Screenshot working update log customer" loading="lazy"></button>
+        <button type="button" data-full="assets/project-pdf/database-4.jpg" data-caption="Customer Database Updating — final database"><img src="assets/project-pdf/database-4.jpg" alt="Screenshot final database customer" loading="lazy"></button>
+      </div><div class="gallery-label">4 screenshot · Klik gambar untuk memperbesar</div>
+      <div class="tags"><span>Google Sheets</span><span>800 record + 180 update</span><span>Rancangan latihan</span></div></article>
+
+    <article class="proj"><h3>5. Digital Systems — EquipMaxTV</h3>
+      <p>Aplikasi web internal Maxstream Equipment Control (MEC) untuk membantu pengelolaan inventaris dan peminjaman peralatan produksi. Screenshot menampilkan katalog peralatan, filter status ketersediaan/peminjaman, daftar barang yang dipinjam, serta formulir permintaan dengan pilihan paket dan item.</p>
+      <p class="res">Prototipe aplikasi yang dikembangkan dengan bantuan AI. Beberapa alur seperti pemindaian QR dan pembuatan PDF masih memerlukan pengujian dan penyempurnaan.</p>
+      <div class="gallery" aria-label="Galeri screenshot EquipMaxTV">
+        <button type="button" data-full="assets/equipmaxtv/equipmaxtv-dashboard.png" data-caption="EquipMaxTV — katalog peralatan dan status peminjaman"><img src="assets/equipmaxtv/equipmaxtv-dashboard.png" alt="Tampilan katalog dan status peminjaman EquipMaxTV" loading="lazy"></button>
+        <button type="button" data-full="assets/equipmaxtv/equipmaxtv-borrowed-list.png" data-caption="EquipMaxTV — tampilan daftar peralatan dan status barang"><img src="assets/equipmaxtv/equipmaxtv-borrowed-list.png" alt="Tampilan daftar peralatan EquipMaxTV" loading="lazy"></button>
+        <button type="button" data-full="assets/equipmaxtv/equipmaxtv-request-form.png" data-caption="EquipMaxTV — formulir permintaan peminjaman peralatan"><img src="assets/equipmaxtv/equipmaxtv-request-form.png" alt="Formulir permintaan peminjaman EquipMaxTV" loading="lazy"></button>
+      </div><div class="gallery-label">3 screenshot aplikasi · Klik gambar untuk memperbesar</div>
+      <div class="tags"><span>Digital Systems</span><span>Web App</span><span>Prototype</span></div></article>
+  </div>
+</div></section>
+
+<section id="kompetensi"><div class="wrap">
+  <h2>Kompetensi</h2>
+  <div class="skills">
+    <span>Administrasi & input data</span><span>Pemeliharaan database</span><span>Data cleaning & standardisasi</span><span>Validasi & deteksi duplikasi</span><span>Quality check</span><span>Excel & Google Sheets (formula, filter, lookup, rekapitulasi)</span><span>Dokumentasi & ringkasan laporan</span><span>Koordinasi lintas fungsi</span><span>Troubleshooting teknis</span><span>Live streaming, vMix, OBS, multicamera</span><span>Produksi audio-visual</span>
+  </div>
+</div></section>
+
+<section id="pendidikan"><div class="wrap">
+  <h2>Pendidikan & sertifikasi</h2>
+  <div class="two">
+    <div><h3>Pendidikan</h3><ul>
+      <li><b>D4 Broadcasting</b>, Sekolah Tinggi Multi Media “MMTC” Yogyakarta. IPK 3,6, lulus 2019.</li>
+      <li><b>Rekayasa Perangkat Lunak</b>, SMK Telkom Purwokerto, 2012–2015.</li></ul></div>
+    <div><h3>Sertifikasi & pelatihan</h3><ul>
+      <li>Digital Marketing, Udemy (2024)</li>
+      <li>SKKNI Assessor for Film Production, BNSP (2022)</li>
+      <li>Media Research, Telkom Corporate University (2021)</li>
+      <li>SKKNI Video Editor, BNSP (2019)</li>
+      <li>SKKNI Television Production, BNSP (2017)</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Catatan integritas data</h2>
+  <p class="note">Saya belum memiliki pengalaman kerja langsung dalam pengawasan distribusi BBM atau sektor energi. Portofolio data adalah demonstrasi kemampuan melalui dataset. Saya siap mempelajari SOP, regulasi, standar keselamatan, dan prosedur pelaporan yang berlaku serta bekerja sesuai arahan dan ketentuan.</p>
+</div></section>
+
+<section id="kontak" class="contact"><div class="wrap">
+  <h2>Kontak</h2>
+  <p>Berbasis di Banyumas, Indonesia. Terbuka untuk peluang di bidang technical operations, administrasi data, dan pelaporan.</p>
+  <a class="mail" href="mailto:ardiyanto.bijaksono@gmail.com">ardiyanto.bijaksono@gmail.com</a>
+</div></section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Preview screenshot" aria-hidden="true">
+  <button type="button" id="closeLightbox" aria-label="Tutup preview">Tutup ✕</button>
+  <img id="lightboxImage" src="" alt="">
+  <div class="lb-caption" id="lightboxCaption"></div>
+</div>
+<footer><div class="wrap">© <span id="y"></span> Ardiyanto Bijaksono</div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const lightbox=document.getElementById('lightbox');
+const lightboxImage=document.getElementById('lightboxImage');
+const lightboxCaption=document.getElementById('lightboxCaption');
+function closeLightbox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImage.src='';}
+document.querySelectorAll('.gallery button[data-full]').forEach(button=>button.addEventListener('click',()=>{
+  lightboxImage.src=button.dataset.full;lightboxImage.alt=button.querySelector('img').alt;
+  lightboxCaption.textContent=button.dataset.caption||'';lightbox.classList.add('open');lightbox.setAttribute('aria-hidden','false');
+}));
+document.getElementById('closeLightbox').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
+</script>
+</body>
+</html>
