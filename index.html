@@ -209,10 +209,11 @@ footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid va
   </div>
 </div></section>
 
+<!--
 <section><div class="wrap">
   <h2>Catatan integritas data</h2>
   <p class="note">Saya belum memiliki pengalaman kerja langsung dalam pengawasan distribusi BBM atau sektor energi. Portofolio data adalah demonstrasi kemampuan melalui dataset. Saya siap mempelajari SOP, regulasi, standar keselamatan, dan prosedur pelaporan yang berlaku serta bekerja sesuai arahan dan ketentuan.</p>
-</div></section>
+</div></section> -->
 
 <section id="kontak" class="contact"><div class="wrap">
   <h2>Kontak</h2>
@@ -225,7 +226,20 @@ footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid va
   <img id="lightboxImage" src="" alt="">
   <div class="lb-caption" id="lightboxCaption"></div>
 </div>
-<footer><div class="wrap">© <span id="y"></span> Ardiyanto Bijaksono</div></footer>
+<section id="visitor-counter" aria-label="Statistik pengunjung">
+  <div class="wrap" style="text-align:center">
+    <p>Total kunjungan website</p>
+    <p id="visitorCount">Memuat…</p>
+    <p id="visitorStatus">Statistik pengunjung</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> Ardiyanto Bijaksono
+  </div>
+</footer>
+  
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 const lightbox=document.getElementById('lightbox');
@@ -239,6 +253,9 @@ document.querySelectorAll('.gallery button[data-full]').forEach(button=>button.a
 document.getElementById('closeLightbox').addEventListener('click',closeLightbox);
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLightbox();});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape')closeLightbox();
+});
 </script>
 </body>
 </html>
