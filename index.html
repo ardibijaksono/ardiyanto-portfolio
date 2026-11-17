@@ -18,8 +18,152 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
+    <!-- Dokumen khusus ekspor CV PDF. Hanya muncul saat mencetak/menyimpan PDF. -->
+    <main id="cv-print" aria-label="CV Ardiyanto Bijaksono">
+      <header class="cv-header">
+        <h1>ARDIYANTO BIJAKSONO</h1>
+        <p class="cv-headline">
+          TECHNICAL OPERATIONS | DATA ADMINISTRATION &amp; REPORTING
+        </p>
+        <p class="cv-contact">
+          Banyumas, Indonesia <span>•</span> ardiyanto.bijaksono@gmail.com
+        </p>
+      </header>
+
+      <section class="cv-section cv-summary">
+        <h2>PROFIL</h2>
+        <p>
+          Profesional dengan pengalaman lebih dari 5 tahun dalam operasional
+          produksi broadcasting dan konten digital. Berpengalaman mendukung
+          proses produksi, koordinasi lintas tim, dokumentasi, serta penanganan
+          kendala teknis. Mengembangkan kompetensi administrasi data, data
+          cleaning, validasi, dan pelaporan menggunakan Microsoft Excel dan
+          Google Sheets.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2>PENGALAMAN KERJA</h2>
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Technical Support — Digital Content Creations</h3>
+            <time>Jul 2023 – Sekarang</time>
+          </div>
+          <p class="cv-company">Telkomsel</p>
+          <ul>
+            <li>
+              Mendukung operasional teknis program dan konten digital untuk
+              IndiHome TV by Telkomsel.
+            </li>
+            <li>
+              Menangani aspek teknis audio serta mendukung produksi konten
+              Allplay Entertainment, Fun Planet, dan MyTelkomsel.
+            </li>
+            <li>
+              Berkoordinasi dengan tim kreatif, marketing, dan komunikasi dalam
+              pelaksanaan produksi.
+            </li>
+          </ul>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Audio Specialist — Inhouse Channel &amp; Production</h3>
+            <time>Feb 2020 – Jun 2023</time>
+          </div>
+          <p class="cv-company">PT Telkom Indonesia</p>
+          <ul>
+            <li>
+              Menangani kebutuhan teknis audio untuk program IndiHome TV, live
+              streaming, webinar, dan konten digital.
+            </li>
+            <li>
+              Berkolaborasi dengan tim produksi untuk menjaga kelancaran proses
+              dan kualitas siaran serta mendukung acara internal perusahaan.
+            </li>
+          </ul>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Video Editor (Paruh Waktu)</h3>
+            <time>Jun 2019 – Jan 2020</time>
+          </div>
+          <p class="cv-company">Evio Multimedia</p>
+          <ul>
+            <li>
+              Mengedit video untuk kebutuhan korporat, content marketing, acara,
+              dan media sosial.
+            </li>
+          </ul>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Camera Person, Video Editor &amp; Video Journalist (Magang)</h3>
+            <time>Jul – Sep 2018</time>
+          </div>
+          <p class="cv-company">Kompas TV</p>
+          <ul>
+            <li>
+              Mendukung peliputan berita, pengambilan gambar, dan penyuntingan
+              materi jurnalistik sesuai standar redaksi dan tenggat produksi.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="cv-section">
+        <h2>PROYEK TERPILIH</h2>
+        <ul class="cv-projects">
+          <li>
+            <strong>Data Cleaning &amp; Validation:</strong> latihan 730 record;
+            identifikasi 30 baris duplikat lanjutan dan penyusunan cleaned data
+            serta validation log.
+          </li>
+          <li>
+            <strong>PDF-to-Excel Invoice:</strong> latihan 400 invoice; 400/400
+            pemeriksaan aritmetika sesuai dan tanpa ID duplikat pada dataset
+            latihan.
+          </li>
+          <li>
+            <strong>EquipMaxTV:</strong> prototipe aplikasi web internal untuk
+            katalog inventaris dan pengelolaan permintaan peminjaman peralatan
+            produksi.
+          </li>
+        </ul>
+      </section>
+
+      <section class="cv-section">
+        <h2>KOMPETENSI</h2>
+        <p>
+          Administrasi &amp; input data · Data cleaning &amp; standardisasi ·
+          Validasi &amp; deteksi duplikasi · Quality check · Excel &amp; Google
+          Sheets (formula, filter, lookup, rekapitulasi) · Dokumentasi &amp;
+          pelaporan · Koordinasi lintas fungsi · Troubleshooting teknis · Live
+          streaming · vMix · OBS · Multicamera · Produksi audio-visual
+        </p>
+      </section>
+
+      <section class="cv-section cv-education">
+        <h2>PENDIDIKAN &amp; SERTIFIKASI</h2>
+        <p>
+          <strong>D4 Broadcasting</strong> — Sekolah Tinggi Multi Media “MMTC”
+          Yogyakarta, IPK 3,6 (2019).
+        </p>
+        <p>
+          <strong>Rekayasa Perangkat Lunak</strong> — SMK Telkom Purwokerto
+          (2012–2015).
+        </p>
+        <p>
+          <strong>Sertifikasi:</strong> SKKNI Assessor for Film Production, BNSP
+          (2022) · Digital Marketing, Udemy (2024) · SKKNI Video Editor, BNSP
+          (2019) · SKKNI Television Production, BNSP (2017).
+        </p>
+      </section>
+      <footer class="cv-footer">
+        Ardiyanto Bijaksono <span>•</span> Curriculum Vitae
+      </footer>
+    </main>
+
     <nav>
       <div class="wrap">
         <b>Ardiyanto Bijaksono</b>
@@ -47,8 +191,8 @@
           <div class="btns">
             <a class="btn p" href="#kontak">Hubungi saya</a>
             <a class="btn" href="#portofolio">Lihat portofolio proyek</a>
-            <button class="btn" onclick="window.print()">
-              Simpan CV sebagai PDF
+            <button class="btn" id="downloadCvPdf" type="button">
+              Unduh CV PDF
             </button>
           </div>
         </div>
@@ -517,7 +661,7 @@
           sesuai arahan dan ketentuan.
         </p>
       </div>
-    </section> -->
+    </section>-->
 
     <section id="kontak" class="contact">
       <div class="wrap">
