@@ -57,3 +57,11 @@ document.addEventListener("keydown", (event) => {
     console.error("Visitor counter:", error);
   }
 })();
+
+// Export a dedicated, photo-free, one-page A4 CV document.
+const downloadCvPdfButton = document.getElementById("downloadCvPdf");
+if (downloadCvPdfButton) {
+  downloadCvPdfButton.addEventListener("click", () => {
+    window.print();
+  });
+}
