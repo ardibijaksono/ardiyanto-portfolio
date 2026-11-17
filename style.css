@@ -423,3 +423,163 @@ footer {
     break-inside: avoid;
   }
 }
+
+/* Dedicated one-page A4 CV export */
+#cv-print {
+  display: none;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 8mm 9mm;
+}
+
+@media print {
+  html,
+  body {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #172033 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8pt !important;
+    line-height: 1.22 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body > *:not(#cv-print) {
+    display: none !important;
+  }
+  #cv-print {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #172033 !important;
+    background: #fff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8pt !important;
+    line-height: 1.22 !important;
+  }
+  #cv-print * {
+    box-sizing: border-box;
+  }
+  #cv-print .cv-header {
+    border-bottom: 2px solid #244a80;
+    padding: 0 0 5px;
+    margin: 0 0 7px;
+  }
+  #cv-print .cv-header h1 {
+    margin: 0 0 2px;
+    color: #17365f !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 19pt !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0.35px;
+    font-weight: 800;
+  }
+  #cv-print .cv-headline {
+    margin: 0 0 3px;
+    color: #315b8d !important;
+    font-size: 8.5pt !important;
+    line-height: 1.15 !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  #cv-print .cv-contact {
+    margin: 0;
+    color: #4b5563 !important;
+    font-size: 7.7pt !important;
+  }
+  #cv-print .cv-contact span,
+  #cv-print .cv-footer span {
+    padding: 0 4px;
+    color: #8a96a8 !important;
+  }
+  #cv-print .cv-section {
+    margin: 0 0 6px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  #cv-print .cv-section h2 {
+    margin: 0 0 3px !important;
+    padding: 0 0 2px !important;
+    border-bottom: 1px solid #cbd5e1;
+    color: #244a80 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8.4pt !important;
+    line-height: 1.1 !important;
+    font-weight: 800;
+    letter-spacing: 0.55px;
+  }
+  #cv-print p {
+    margin: 0 0 2px !important;
+  }
+  #cv-print .cv-summary p,
+  #cv-print .cv-section > p {
+    text-align: left;
+  }
+  #cv-print .cv-entry {
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  #cv-print .cv-entry-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  #cv-print .cv-entry h3 {
+    margin: 0 !important;
+    color: #18263c !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8.2pt !important;
+    line-height: 1.15 !important;
+    font-weight: 700;
+  }
+  #cv-print time {
+    flex: 0 0 auto;
+    color: #536174 !important;
+    font-size: 7.5pt !important;
+    white-space: nowrap;
+  }
+  #cv-print .cv-company {
+    margin: 1px 0 1px !important;
+    color: #315b8d !important;
+    font-weight: 700;
+    font-size: 7.7pt !important;
+  }
+  #cv-print ul {
+    margin: 1px 0 0 12px !important;
+    padding: 0 !important;
+  }
+  #cv-print li {
+    margin: 0 0 1px !important;
+    padding: 0 !important;
+  }
+  #cv-print .cv-projects {
+    margin-left: 12px !important;
+  }
+  #cv-print .cv-education p {
+    margin: 0 0 2px !important;
+  }
+  #cv-print .cv-footer {
+    margin-top: 4px;
+    padding-top: 3px;
+    border-top: 1px solid #cbd5e1;
+    color: #64748b !important;
+    font-size: 6.8pt !important;
+    text-align: right;
+  }
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
